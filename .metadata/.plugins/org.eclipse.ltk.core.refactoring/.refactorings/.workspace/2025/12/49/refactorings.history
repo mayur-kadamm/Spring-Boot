@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;SwiggyApplication&apos;" deleteContents="false" description="Delete resource &apos;SwiggyApplication&apos;" element1="/SwiggyApplication" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1764853877226"/>&#x0A;<refactoring comment="Rename resource &apos;SpringBoot02-2&apos; to &apos;SpringBoot02&apos;" description="Rename resource &apos;SpringBoot02-2&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SpringBoot02-2" name="SpringBoot02" stamp="1764853964719" updateReferences="true"/>
-</session>
