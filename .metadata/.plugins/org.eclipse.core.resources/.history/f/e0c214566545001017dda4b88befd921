@@ -1,0 +1,9 @@
+package com.mayur.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration // make it as a configuration class
+public class AppConfig {
+
+	public AppCon
+}

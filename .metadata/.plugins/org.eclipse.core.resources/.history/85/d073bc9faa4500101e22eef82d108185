@@ -1,0 +1,51 @@
+package com.jt.controller;
+
+import java.net.HttpURLConnection;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.jt.dto.ResponseMessage;
+import com.jt.dto.UserRequestDto;
+import com.jt.entity.UserRegister;
+import com.jt.service.UserRegisterService;
+import com.jt.utility.Constants;
+
+
+
+@Controller
+public class UserRegisterController {
+	private UserRegisterService userRegisterService;
+
+	
+
+	@PostMapping("/register")
+	public ResponseEntity<ResponseMessage> createRegister(@RequestBody UserRequestDto userRequestDto) {
+	try {
+		
+	if(userRequestDto ==null || userRequestDto.getEmail()==null || userRequestDto.getEmail().isEmpty() ||
+			
+			userRequestDto.getPassword()==null || userRequestDto.getPassword().isEmpty())	{
+		
+		return ResponseEntity.ok(new ResponseMessage(HttpURLConnection.HTTP_BAD_REQUEST, Constants.FAILURE, "email and password cannot be empty..!"));
+	}
+			
+		UserRegister userRegister = userRegisterService.createdSwiggyRegister(userRequestDto);
+		
+		if(userRegister!=null) {
+		
+		return ResponseEntity.ok(new ResponseMessage(HttpURLConnection.HTTP_CREATED, Constants.SUCCESS, "Zomato user Register succesfully", userRegister));
+	}else {
+	
+		return ResponseEntity.ok(new ResponseMessage(HttpURLConnection.HTTP_BAD_REQUEST, Constants.FAILURE, "Zomato user Register failed",userRegister));
+		
+	}}catch (Exception e) {
+		return ResponseEntity.ok(new ResponseMessage(HttpURLConnection.HTTP_BAD_GATEWAY, Constants.FAILED, "Internal Server Error"));
+	}
+	
+	
+	}
+
+}

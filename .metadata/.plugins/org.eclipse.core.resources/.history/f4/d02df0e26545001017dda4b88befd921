@@ -1,0 +1,32 @@
+package com.mayur.main;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.mayur.sbeans.WeekDayFinder;
+
+public class Dependency_Injuction_client {
+
+	public static void main(String[] args) {
+		
+		// create IOC container 
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+
+		
+		// get target spring bean class object reference 
+		Object obj = ctx.getBean("wdf");
+		
+		//type casting 
+		
+		WeekDayFinder finder = (WeekDayFinder)obj;
+		
+		//invoke the business method
+		String msg = finder.showMsg("Mayur");
+		System.out.println("Result is   :: "+msg);
+		
+		// close IOC 
+		
+		ctx.close();
+		
+	}
+
+}

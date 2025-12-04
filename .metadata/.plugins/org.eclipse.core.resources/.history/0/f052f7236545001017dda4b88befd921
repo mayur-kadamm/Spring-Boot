@@ -1,0 +1,10 @@
+package com.mayur.main;
+
+public class Dependency_Injuction_client {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

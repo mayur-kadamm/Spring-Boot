@@ -1,0 +1,10 @@
+package com.jt.service;
+
+import com.jt.dto.UserRequestDto;
+import com.jt.entity.UserRegister;
+
+public interface UserRegisterService {
+	
+	public UserRegister createdSwiggyRegister(UserRequestDto userRequestDto);
+
+}
